@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<a href="{% url 'list_albums' %}" class="top-page">Home</a> 
+<h2>New Album</h2>
+<form method="POST" class="new-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-secondary">Save</button>
+</form>
+
+{% endblock content %}

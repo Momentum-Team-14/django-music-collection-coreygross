@@ -9,9 +9,14 @@
     <title>{% block title %} {%endblock title %}</title>
 </head>
 <body>
+    <a href="{% url 'create_album' %}" class="top-menu">
+        {% include 'albums/icons/file-earmark-plus.svg' %}
+    </a>
     <h1>Corey's Albums</h1>
     {% block content %}
     {% endblock content %}
+
+    
 
 </body>
 </html>

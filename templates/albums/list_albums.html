@@ -4,12 +4,11 @@
 {% block title %}Album List{% endblock title %}
 {% block content %}
         <header>
-            <h1><a href="/">Favorite Albums</a></h1>
+            <h1>Favorite Albums</h1>
         </header>
         <article>
-            <h2><a href="">Albums</a></h2>
             {% for album in albums %}  
-            <p>{{ album }}</p> 
+            <a href="{$% url 'album_detail' pk=album.pk}"> {{ album }}</a> 
             {% endfor %}
         </article>
 {% endblock content %}
