@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block title %}Album List{% endblock title %}
+{% block content %}
+        <header>
+            <h1><a href="/">Favorite Albums</a></h1>
+        </header>
+        <article>
+            <h2><a href="">Albums</a></h2>
+            {% for album in albums %}  
+            <p>{{ album }}</p> 
+            {% endfor %}
+        </article>
+{% endblock content %}
