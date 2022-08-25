@@ -16,9 +16,10 @@
         <button>EDIT ALBUMS</button>
     </a></p>
 
-    <p><a href="{% url 'delete_album' pk=album.pk %}" class="edit_buttons">
-        <button>DELETE</button>
+    <p><a href="{% url 'delete_album' pk=album.pk %}" class="edit_buttons"onclick="if (!confirm('Are you sure?')) { return false }"><button>DELETE</button>
+    </form>
     </a></p>
+    <
 </div>
 
 
