@@ -1,1 +1,25 @@
 {% extends "base.html" %}
+
+
+{% block content %}
+<h1></h1>
+<div class="container">
+    <div class="list-details">
+        <p>{{ album.artist }} </p>
+        <p>{{ album }} </p>
+    </div>
+        {% if album.album_image %}
+        <img src='{{ album.album_image.url }}'>
+        {% endif %}
+
+    <p><a href="{% url 'edit_albums' pk=album.pk %}" class = "edit_buttons">
+        <button>EDIT ALBUMS</button>
+    </a></p>
+
+    <p><a href="{% url 'delete_album' pk=album.pk %}" class="edit_buttons">
+        <button>DELETE</button>
+    </a></p>
+</div>
+
+
+{% endblock content %}

@@ -6,13 +6,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    
     <title>{% block title %} {%endblock title %}</title>
 </head>
-<body>
+    <h2 class="page-header">Corey's Albums</h2>
+    <a href="{% url 'list_albums' %}" class="home-page">Home Page</a> 
     <a href="{% url 'create_album' %}" class="top-menu">
         {% include 'albums/icons/file-earmark-plus.svg' %}
     </a>
-    <h1>Corey's Albums</h1>
+
+<body>
     {% block content %}
     {% endblock content %}
 

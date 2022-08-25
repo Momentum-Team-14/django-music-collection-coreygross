@@ -1,14 +1,21 @@
 {% extends "base.html" %}
+{% load static %}
 
 
 {% block title %}Album List{% endblock title %}
+
 {% block content %}
-        <header>
-            <h1>Favorite Albums</h1>
-        </header>
-        <article>
+    <header>
+        <h1></h1>
+    </header>
+    <div class="album-list">
+        <article class="list">
             {% for album in albums %}  
-            <a href="{$% url 'album_detail' pk=album.pk}"> {{ album }}</a> 
+            <a href="{% url 'album_detail' pk=album.pk %}"> {{ album }}</a>
+            {% if album.album_image %}
+            <img src='{{ album.album_image.url }}' width=100px>
+            {% endif %}
             {% endfor %}
         </article>
+    </div>
 {% endblock content %}
